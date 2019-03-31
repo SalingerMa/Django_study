@@ -5,24 +5,11 @@
     <title>Hello World</title>
 </head>
 <body>
+{% extends "base.html" %}
 
-<h1>{{ hello }}</h1>
-
-<ul>
-{% for athlete in athlete_list %}
-    <li>{{ athlete.name }}</li>
-{% endfor %}
-</ul>
-
-
-<table border="1">
-    {% for row in rows %}
-    <tr>{%for col in cols%}
-    <td>a</td>
-        {% endfor %}
-    </tr>
-{% endfor %}
-</table>
+{% block table11 %}
+<p>继承了 base.html 文件</p>
+{% endblock %}
 
 </body>
 </html>

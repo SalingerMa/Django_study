@@ -25,7 +25,7 @@ SECRET_KEY = 's7k*+$&b4o)75!i3i=rbb)dzakbe@lhv&v^=mvay6@_4gcc1z4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'HelloWorld.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # 或者使用 mysql.connector.django
-        'NAME': 'school',
+        'NAME': 'test',
         'USER': 'root',
-        'PASSWORD': 'xls1208',
+        'PASSWORD': '123456',
         'HOST':'localhost',
         'PORT':'3306',
     }

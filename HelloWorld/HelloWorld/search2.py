@@ -8,4 +8,5 @@ def search_post(request):
     ctx = {}
     if request.POST:
         ctx['rlt'] = request.POST['q']
+        print(request.POST)
     return render(request, "post.html", ctx)

@@ -3,6 +3,7 @@
 from django.shortcuts import render
 from .config import *
 
+
 def hello(request):
     context = {}
     context['hello'] = 'Hello World!'
@@ -10,4 +11,3 @@ def hello(request):
     context['rows'] = [1, 2]
     context['cols'] = [1,2,3]
     return render(request, 'hello.html', context)
-

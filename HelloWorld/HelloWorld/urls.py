@@ -26,14 +26,19 @@ Including another URLconf
 #     path('hello/', view.hello, name='hello'),
 # ]
 
+from django.conf.urls import url
+from django.contrib import admin
+
 from django.conf.urls import *
-from . import view, testdb, search, search2
+from . import view, testdb, search, search2, addmoney
 
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
     url(r'^hello$', view.hello),
     url(r'^testdb$', testdb.testdb),
     url(r'^search_form$', search.search_form),
     url(r'^search$', search.search),
-    url(r'^search-post$', search2.search_post)
+    url(r'^search-post$', search2.search_post),
+    url(r'^addmoney$', addmoney.add_money),
 ]
 

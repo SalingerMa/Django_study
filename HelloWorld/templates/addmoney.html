@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staging Add Money</title>
+</head>
+<body>
+    <h3>信息输入:</h3>
+    <form action="/addmoney" method="post">
+            {% csrf_token %}
+            用户名：
+            <input type="text" name="uid" placeholder="请输入用户名">
+            <br>
+            <br>
+            充值平台：
+            <input type="radio" name="platform_id" value=2 checked="checked">安卓
+            <input type="radio" name="platform_id" value=1>IOS
+            <br>
+            <br>
+            充值次数：
+            <input type="text" name="num" placeholder="请输入充值次数，一次1万">
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+    </form>
+
+
+    <h3>添加结果：</h3>
+    <ul>
+    {% for r in rlt %}
+        <li>{{ r }}</li>
+    {% endfor %}
+    </ul>
+
+</body>
+</html>

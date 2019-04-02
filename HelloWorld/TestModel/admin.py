@@ -8,15 +8,34 @@ from TestModel.models import Test, Contact, Tag
 #     fields = ('name', 'email')
 
 
+# class ContactAdmin(admin.ModelAdmin):
+#     fieldsets = (
+#         ['Main', {
+#             'fields': ('name', 'email'),
+#         }],
+#         ['Advance', {
+#             'classes': ('collapse',),  # CSS
+#             'fields': ('age',),
+#         }]
+#     )
+
+class TagInline(admin.TabularInline):
+    model = Tag
+
+
 class ContactAdmin(admin.ModelAdmin):
+    list_display = ('name', 'age', 'email')  # list
+    search_fields = ('name',)
+    inlines = [TagInline]  # Inline
     fieldsets = (
         ['Main', {
             'fields': ('name', 'email'),
         }],
         ['Advance', {
-            'classes': ('collapse',),  # CSS
+            'classes': ('collapse',),
             'fields': ('age',),
         }]
+
     )
 
 
